@@ -1,20 +1,224 @@
-.root {
+body{
+  font-family: GameOfThrones, fantasy, sans-serif;
+  color: white;
+  letter-spacing: 0.01em;
+  word-spacing: 0.1em;
+  background-image: url('../public/images/map.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+a:hover {
+  color: #af111c;
+}
+h1 {
+  justify-content: center;
+}
+
+
+h4 {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+p {
+  font-size: 12px
 }
 
-.App-header {
-  background-color: red;
-  min-height: 100vh;
+/* NAV BAR */
+
+.navbar > ul{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  height: 4rem;
+  line-height: 4rem;
+  padding: 5px;
+  border-bottom: 1px solid #eeedf2;
+  margin-bottom: 10px;
+}
+
+/* HOME PAGE */
+.home-wall {
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  align-items: baseline;
+
+}
+.home-wall span {
+  background: rgba(0,0,0,0.5);
+}
+
+.home-heading {
+  text-align: : center;
+  line-height: 3rem;
+  padding-bottom: 1rem;
+}
+
+.home-content{
+  line-height: 2rem;
+  border: .5px solid #707070;
+}
+
+/* positioning of standings tables  */
+.standings {
+  display: flex;
+  justify-content: center;
+  line-height: 2.5rem;
+
+}
+
+/* SCORING PAGE */
+
+.scoring {
+  display: grid;
+  justify-content: center;
+
+  padding: -2rem;
+  border: -2rem;
+}
+
+.scoring span {
+  background: rgba(0,0,0,0.5);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+/* CHARACTERS PAGE */
+.button {
+  display: flex;
+  justify-content: flex-end;
+  height:3rem;
+  padding-right: 3rem;
+}
+
+
+.character-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+}
+
+.character-pic {
+  width: 40%;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.character-card {
+  width: 18rem;
+  margin-bottom: 5px;
+  display: flex;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.9);
+  transition: 0.3s;
+  border-radius: 5px;
+
+}
+
+.character-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,5);
+}
+
+.character-details {
+  padding: 2px 16px;
+  display: flex;
+  flex-flow: row wrap;
+}
+/* CHARACTER BIOS */
+.character-about {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+}
+
+.character-display {
+  width: 50rem;
+  margin-bottom: 10px;
+  display: flex;
+  /* box-shadow: 0 2px 4px 0 rgba(0,0,0,0.9); */
+  background: rgba(0,0,0,0.5);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.character-profile {
+  width: 40%;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
+.character-button {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.character-bio {
+  padding: 2px 16px 2px 16px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.character-bio p {
+  font-family: GameOfThrones, fantasy, sans-serif;
+  font-size: 1.1em;
   color: white;
+  letter-spacing: 0.01em;
+  word-spacing: 0.1em;
+}
+/* TEAM VIEW  */
+
+.pic-small {
+  width: 2em;
+  height: 3em;
+}
+
+.team-about {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.team-display {
+  width: 45rem;
+  margin-bottom: 10px;
+  display: grid;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.9);
+  /* background: rgba(0,0,0,0.5); */
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.team-members {
+  padding: 2px 16px 2px 16px;
+  display: grid;
+  flex-flow: row wrap;
+}
+.gif-card {
+  width:28rem;
+  margin-bottom: 5px;
+  display: grid;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.9);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.gif{
+  width: 100%;
+  /* height: 100%; */
+  border-radius: 5px 5px 0 0;
+}
+
+.select-dd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.select-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem;
+  height: 2rem;
+  background: rgba(0,0,0,0.5);
 }
