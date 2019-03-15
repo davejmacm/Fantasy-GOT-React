@@ -23,6 +23,21 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBQBvvRD0fRGLIwG2eF145pcXcDeq0yFxg",
+    authDomain: "fantasy-got.firebaseapp.com",
+    databaseURL: "https://fantasy-got.firebaseio.com",
+    projectId: "fantasy-got",
+    storageBucket: "fantasy-got.appspot.com",
+    messagingSenderId: "837780020674"
+  };
+  firebase.initializeApp(config);
+</script>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
