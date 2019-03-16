@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => (
-  <nav class = "navbar">
+  <nav className = "navbar">
   <ul>
-    <li><a href="/">Home</a> </li>
+    <li><Link to="/">Home </Link> </li>
     <li><a href="/teams">League</a> </li>
     <li><a href="/characters">Characters</a> </li>
     <li><a href="/scoring">Scoring</a> </li>
-
   </ul>
 </nav>
 );
 
 export default Navbar;
+//should replace a href with Link to as above but the current way does make it appear in the url
