@@ -7,7 +7,7 @@ const Navbar = () => (
     <li><Link to="/">Home </Link> </li>
     <li><a href="/teams">League</a> </li>
     <li><a href="/characters">Characters</a> </li>
-    <li><a href="/scoring">Scoring</a> </li>
+    <li><Link to="/scoring">Scoring</Link> </li>
   </ul>
 </nav>
 );
