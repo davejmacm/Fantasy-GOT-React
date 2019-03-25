@@ -1,0 +1,25 @@
+[debug] [2019-03-25T21:30:25.923Z] ----------------------------------------------------------------------
+[debug] [2019-03-25T21:30:25.925Z] Command:       E:\Programes\Development environment tools\node.exe C:\Users\Hoodedcheese\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
+[debug] [2019-03-25T21:30:25.926Z] CLI Version:   6.5.0
+[debug] [2019-03-25T21:30:25.926Z] Platform:      win32
+[debug] [2019-03-25T21:30:25.926Z] Node Version:  v10.15.3
+[debug] [2019-03-25T21:30:25.927Z] Time:          Mon Mar 25 2019 21:30:25 GMT+0000 (Greenwich Mean Time)
+[debug] [2019-03-25T21:30:25.927Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-25T21:30:25.935Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-25T21:30:25.936Z] > authorizing via signed-in user
+[debug] [2019-03-25T21:30:25.936Z] [iam] checking project fantasy-got for permissions ["firebase.projects.get"]
+[debug] [2019-03-25T21:30:25.938Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-got:testIamPermissions  
+
+[debug] [2019-03-25T21:30:26.741Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-25T21:30:26.743Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fantasy-got  
+ 
+[debug] [2019-03-25T21:30:27.480Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'E:\Code repos\React\Fantasy_Game_of_Thrones\fantasy_got'...
+[info] 
+[debug] [2019-03-25T21:30:27.484Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/837780020674/clients/_:getWebAppConfig  
+ 
+[debug] [2019-03-25T21:30:27.935Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./public
+[info] +  hosting: Local server: http://localhost:5000
