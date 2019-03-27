@@ -32,11 +32,11 @@ class Login extends Component {
    <h1> Log in to join the fight!</h1>
     <form>
     <div className="login-fields">
-      <input id="fieldEmail" value={this.state.email} onChange={this.handleChange} type="email" placeholder="Enter Email"/>
+      <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="fieldEmail" placeholder="Enter Email"/>
 
-      <input id="fieldPassword" value={this.state.password} onChange={this.handleChange} type="password" placeholder="Password"/>
+      <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="fieldPassword" placeholder="Password"/>
 
-      <button id="btnLogin" className="btn-Login" type = "submit" onClick={this.Login}>Log in</button>
+      <button id="btnLogin" className="btn-Login" type = "submit" onClick={this.login}>Log in</button>
 
       <button id="btnSignup" className="btn-Signup" onClick={this.signup}>Sign up</button>
 
