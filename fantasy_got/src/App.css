@@ -4,6 +4,7 @@ body{
   letter-spacing: 0.01em;
   word-spacing: 0.1em;
   background-image: url("images/map.jpg");
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -27,7 +28,7 @@ p {
 
 .login-container {
   position: fixed;
- top: 50%;
+ top: 30%;
  left: 50%;
  /* bring your own prefixes */
  transform: translate(-50%, -50%);
