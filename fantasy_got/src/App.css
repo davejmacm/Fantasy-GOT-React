@@ -23,6 +23,23 @@ p {
   font-size: 12px
 }
 
+/* LOGIN SCREEN */
+
+.login-container {
+  position: fixed;
+ top: 50%;
+ left: 50%;
+ /* bring your own prefixes */
+ transform: translate(-50%, -50%);
+
+}
+
+.login-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* NAV BAR */
 
 .navbar > ul{
