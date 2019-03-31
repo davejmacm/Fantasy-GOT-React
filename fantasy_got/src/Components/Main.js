@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "../App.css";
 import Navbar from "./Navbar";
+import Teams from "./Teams";
 import Scoring from "./Scoring";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import fire from '../config/fire'
@@ -24,6 +25,7 @@ render(){
       <React.Fragment>
         <Navbar />
         <button onClick={this.logout}>Logout</button>
+        <Route path="/teams" component={Teams} />
         <Route path="/scoring" component={Scoring} />
       </React.Fragment>
     </Router>
