@@ -108,6 +108,9 @@ margin-right: .5rem;
   .auth-buttons .btn-logout {
     order: 1;
   }
+  .btn-league {
+    margin-right: 1rem;
+  }
 }
 
 
