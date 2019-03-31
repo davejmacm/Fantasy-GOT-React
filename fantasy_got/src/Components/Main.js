@@ -24,7 +24,10 @@ render(){
     <Router>
       <React.Fragment>
         <Navbar />
-        <button onClick={this.logout}>Logout</button>
+        <div className="auth-buttons">
+        <button className="btn-league">League Change</button>
+        <button className="btn-logout" onClick={this.logout}>Logout</button>
+        </div>
         <Route path="/teams" component={Teams} />
         <Route path="/scoring" component={Scoring} />
       </React.Fragment>

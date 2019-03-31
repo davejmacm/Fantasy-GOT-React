@@ -7,6 +7,7 @@ body{
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  /* height: 100vh; */
 }
 a:hover {
   color: #af111c;
@@ -83,6 +84,33 @@ p {
   line-height: 2.5rem;
 
 }
+
+.auth-buttons {
+  width:100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.btn-logout {
+margin-left: 1rem;
+margin-right: .5rem;
+}
+
+@media (max-width: 400px){
+  .auth-buttons {
+    justify-content: space-between;
+  }
+
+  .auth-buttons .btn-league {
+    order: 2;
+  }
+  .auth-buttons .btn-logout {
+    order: 1;
+  }
+}
+
+
 
 /* SCORING PAGE */
 

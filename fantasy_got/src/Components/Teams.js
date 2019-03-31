@@ -10,11 +10,11 @@ class Teams extends Component {
     };
   }
 
-  var listOfTeams = db.collection('Teams').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-      console.log(doc.data());
-    })
-  })
+  // var listOfTeams = db.collection('Teams').get().then((snapshot) => {
+  //   snapshot.docs.forEach(doc => {
+  //     console.log(doc.data());
+  //   })
+  // })
 
 
   render(){
@@ -36,7 +36,7 @@ class Teams extends Component {
             <th>Score</th>
           </tr>
           <tr>
-          {listOfTeams}
+
           </tr>
         </tbody>
 
@@ -48,3 +48,4 @@ class Teams extends Component {
 
 
   export default Teams;
+  // {listOfTeams}
