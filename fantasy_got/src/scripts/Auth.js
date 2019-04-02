@@ -35,3 +35,30 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     console.log('not logged in');
   }
 });
+
+
+
+//================ original firestore query ===================
+
+getAllCharacters(){
+var query = db.collection('characters')
+          .orderBy('score', 'desc')
+          .limit(50)
+          .get()
+          .then(snapshot=> {
+            if (snapshot.empty) {
+      console.log('No matching documents.');
+      return;
+    }
+
+    snapshot.forEach(doc => {
+      console.log('all character data',doc.id, '=>', doc.data());
+      console.log('doc.data', doc.data());
+      this.setState = ({characters: doc.data})
+      console.log('state:', this.state);
+    });
+  })
+  .catch(err => {
+    console.log('Error getting documents', err);
+  });
+};
