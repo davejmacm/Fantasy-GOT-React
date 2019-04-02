@@ -3,7 +3,7 @@ import CharactersCards from "./CharactersCards";
 
 const CharactersGrid = ({characters}) => {
 
-  const charNodes = characters.products.map(character => {
+  const charNodes = Object.keys(characters).map(character => {
     return(
       <CharactersCards name={character.name} bio={character.bio} pic_url={character.pic_url} score={character.score}/> //key={index}
     );

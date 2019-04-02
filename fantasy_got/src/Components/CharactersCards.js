@@ -2,7 +2,8 @@ import React from 'react';
 
 const CharacterCards = (props) => {
   if (!props) return null;
-
+  console.log("charCard score:", props.score);
+  console.log("charCard bio:", props.bio);
 
   return(
     <div className="character-card">
