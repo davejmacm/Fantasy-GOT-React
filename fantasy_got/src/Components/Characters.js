@@ -7,12 +7,8 @@ class Characters extends Component {
     super(props);
     this.getAllCharacters = this.getAllCharacters.bind(this);
     this.state = {
-      characters: {
-        name:'',
-        bio:'',
-        pic_url: '',
-        score: ''
-      }
+      characters: []
+
     }
   }
 
@@ -27,7 +23,7 @@ var query = db.collection('characters')
           .onSnapshot(collection => {
             const characters = collection.docs.map(doc => doc.data())
             this.setState({ characters })
-            console.log('character state:', this.state);
+            console.log('character state:', this.state.characters);
             console.log('character name:', this.state.characters[1].name);
             console.log('character bio:', this.state.characters[0].bio);
             console.log('character pic_url:', this.state.characters[0].pic_url);
@@ -53,7 +49,7 @@ var query = db.collection('characters')
 
 
   render(){
-
+console.log("this.state in characters:",this.state.characters);
     return (
       <div className = "char-page">
       <h1>Character List</h1>
@@ -62,7 +58,7 @@ var query = db.collection('characters')
           <input type="submit" value="Free Agents"/>
         </form>
       </div>
-        // <CharactersGrid characters={this.state.characters}/>
+        <CharactersGrid characters={this.state.characters}/>
       </div>
     );
   }
