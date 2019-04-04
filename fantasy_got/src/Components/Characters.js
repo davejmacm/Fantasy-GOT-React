@@ -23,33 +23,15 @@ var query = db.collection('characters')
           .onSnapshot(collection => {
             const characters = collection.docs.map(doc => doc.data())
             this.setState({ characters })
-            console.log('character state:', this.state.characters);
-            console.log('character name:', this.state.characters[1].name);
-            console.log('character bio:', this.state.characters[0].bio);
-            console.log('character pic_url:', this.state.characters[0].pic_url);
+
           })
           }
 
 
-//             if (snapshot.empty) {
-//       console.log('No matching documents.');
-//       return;
-//     }
-//
-//     snapshot.forEach(doc => {
-//       console.log('all character data',doc.id, '=>', doc.data());
-//       console.log('doc.data', doc.data());
-//       this.setState = ({characters: doc.data})
-//       console.log('state:', this.state);
-//     });
-//   })
-//
-// };
-
 
 
   render(){
-console.log("this.state in characters:",this.state.characters);
+
     return (
       <div className = "char-page">
       <h1>Character List</h1>
