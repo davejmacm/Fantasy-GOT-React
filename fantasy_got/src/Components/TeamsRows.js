@@ -6,6 +6,7 @@ const TeamsRows = (props) => {
   console.log("user_id:", props.user_id);
 
   return(
+
     <tr>
       <th>0</th>
       <th>{props.name}</th>
