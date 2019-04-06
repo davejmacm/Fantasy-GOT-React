@@ -58,7 +58,7 @@ class Login extends Component {
   signup(e){
     e.preventDefault();
 
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    fire.auth().createUserWithEmailAndPassword(this.state.regEmail, this.state.regPassword)
       .then(() => {
          var user = firebase.auth().currentUser;
          user.updateProfile({ displayName: this.state.displayName})
@@ -66,8 +66,8 @@ class Login extends Component {
       }).then(() => {
         var uid = firebase.auth().currentUser.uid
         console.log("uid:", uid);
-        // db.collection('leagues').doc(this.state.leagueId).update({
-        //   users:admin.firestore.FieldValue.arrayUnion(uid)})
+        db.collection('leagues').doc(this.state.leagueId).update(
+        {"users": firebase.firestore.FieldValue.arrayUnion(uid)})
 
 
       }).then(() => {
@@ -124,9 +124,7 @@ class Login extends Component {
 
 
     </div>
-</form>
 
-<form>
     <div className="register-fields">
 
       <input value={this.state.regEmail} onChange={this.handleChange} type="email" name="regEmail" id="regEmail" placeholder="Enter Email"/>

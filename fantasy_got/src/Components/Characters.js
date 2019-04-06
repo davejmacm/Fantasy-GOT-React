@@ -46,7 +46,7 @@ getAllCharacters(){
   // var league_id = db.collection('leagues').where("users","array-contains", uid);
   // console.log("char league_id:", league_id);
 var query = db.collection('characters')
-          // .where('league', '==', )
+          .where('league_id', '==', 'yrSWAw6tbfGVcl7hd6Mt')
           .orderBy('score', 'desc')
           .limit(50)
           .onSnapshot(collection => {
