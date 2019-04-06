@@ -6,7 +6,7 @@ class Login extends Component {
     super(props);
     this.login = this.login.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.signup = this.signup.bind(this);
+    // this.signup = this.signup.bind(this);
     this.state = {
       email: '',
       password: ''
@@ -23,12 +23,12 @@ class Login extends Component {
     });
   }
 
-  signup(e){
-    e.preventDefault();
-    fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch((error)=> {
-      console.log(error);
-    });
-  }
+  // signup(e){
+  //   e.preventDefault();
+  //   fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch((error)=> {
+  //     console.log(error);
+  //   });
+  // }
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value});
@@ -47,7 +47,10 @@ class Login extends Component {
 
       <button id="btnLogin" className="btn-Login" type = "submit" onClick={this.login}>Log in</button>
 
-      <button id="btnSignup" className="btn-Signup" onClick={this.signup}>Sign up</button>
+
+      <form action="/register" method="get">
+        <input type="submit" value="Sign up"/>
+      </form>
 
       </div>
     </form>
@@ -57,3 +60,4 @@ class Login extends Component {
 };
 
 export default Login;
+// <button id="btnSignup" className="btn-Signup" onClick={this.signup}>Sign up</button>
