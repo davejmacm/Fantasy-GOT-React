@@ -2,12 +2,12 @@ import React from 'react';
 
 const CharacterCards = (props) => {
   if (!props) return null;
-  
+
   console.log("charCard bio:", props.bio);
 
   return(
     <div className="character-card">
-      <img className="character-pic" src={props.pic_url} onerror="this.src='images/2rqqg5.jpg';"/>
+      <img className="character-pic" src={props.pic_url} onError="this.src='images/2rqqg5.jpg';"/>
 
       <div className="character-details">
         <p> Name: <a href="/characters/character.id"> {props.name} </a> </p>

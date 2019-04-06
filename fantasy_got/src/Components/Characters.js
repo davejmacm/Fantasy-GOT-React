@@ -1,23 +1,52 @@
 import React, {Component}  from "react";
 import CharactersGrid from "./CharactersGrid";
 import fire, {db} from '../config/fire';
+import * as firebase from 'firebase';
 
 class Characters extends Component {
   constructor(props){
     super(props);
     this.getAllCharacters = this.getAllCharacters.bind(this);
+    this.authListener = this.authListener.bind(this);
     this.state = {
-      characters: []
-
+      characters: [],
+      user: {},
+      uid: []
     }
   }
 
 componentDidMount(){
-  var characters_data = this.getAllCharacters();
+  this.getAllCharacters();
+  this.authListener();
+  console.log("th.st.user:", this.state.uid);
+  console.log("charUser:", firebase.auth().currentUser);
 };
 
+
+authListener(){
+fire.auth().onAuthStateChanged((user) => {
+  if(user) {
+    this.setState({ user: user });
+    var uid = firebase.auth().currentUser.uid
+    this.setState({uid: uid})
+    console.log(uid);
+    console.log(this.state.uid);
+  } else {
+    this.setState({ user: null });
+    console.log('not logged in',this.setState.user);
+  }
+});
+}
+
+
+
 getAllCharacters(){
+    console.log("th.st.user:", this.state.user);
+  // var uid = firebase.auth().currentUser.uid;
+  // var league_id = db.collection('leagues').where("users","array-contains", uid);
+  // console.log("char league_id:", league_id);
 var query = db.collection('characters')
+          // .where('league', '==', )
           .orderBy('score', 'desc')
           .limit(50)
           .onSnapshot(collection => {

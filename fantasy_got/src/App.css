@@ -37,9 +37,24 @@ p {
 }
 
 .login-fields {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-fields {
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.seen{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.hidden{
+  display: none;
 }
 
 /* NAV BAR */
