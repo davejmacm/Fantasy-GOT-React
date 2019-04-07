@@ -68,8 +68,6 @@ class Login extends Component {
         console.log("uid:", uid);
         db.collection('leagues').doc(this.state.leagueId).update(
         {"users": firebase.firestore.FieldValue.arrayUnion(uid)})
-
-
       }).then(() => {
         var uid = firebase.auth().currentUser.uid
         db.collection('teams').add({

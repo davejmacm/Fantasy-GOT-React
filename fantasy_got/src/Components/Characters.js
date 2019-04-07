@@ -11,12 +11,13 @@ class Characters extends Component {
     this.state = {
       characters: [],
       user: {},
-      uid: []
+      uid: [],
+      league_id: []
     }
   }
 
 componentDidMount(){
-  this.getAllCharacters();
+  // this.getAllCharacters();
   this.authListener();
   console.log("th.st.user:", this.state.uid);
   console.log("charUser:", firebase.auth().currentUser);
@@ -31,6 +32,17 @@ fire.auth().onAuthStateChanged((user) => {
     this.setState({uid: uid})
     console.log(uid);
     console.log(this.state.uid);
+
+
+    var league_id = db.collection('leagues').where("users","array-contains", uid).get();
+    // .then(collection => {
+    //   const characters = collection.docs.map(doc => doc.data())
+    //   this.setState({ league_id })
+    //
+    // });
+    console.log("char league_id:", league_id);
+    this.getAllCharacters(league_id);
+
   } else {
     this.setState({ user: null });
     console.log('not logged in',this.setState.user);
@@ -40,13 +52,13 @@ fire.auth().onAuthStateChanged((user) => {
 
 
 
-getAllCharacters(){
+getAllCharacters(league_id){
     console.log("th.st.user:", this.state.user);
   // var uid = firebase.auth().currentUser.uid;
   // var league_id = db.collection('leagues').where("users","array-contains", uid);
   // console.log("char league_id:", league_id);
 var query = db.collection('characters')
-          .where('league_id', '==', 'yrSWAw6tbfGVcl7hd6Mt')
+          .where('league_id', '==', league_id)
           .orderBy('score', 'desc')
           .limit(50)
           .onSnapshot(collection => {
