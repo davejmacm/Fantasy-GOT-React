@@ -1,25 +1,53 @@
 import React, {Component}  from "react";
-import FreeAgentsGrid from "./CharactersGrid";
+import FreeAgentsGrid from "./FreeAgentsGrid";
 import fire, {db} from '../config/fire';
+import * as firebase from 'firebase';
 
 class FreeAgents extends Component {
   constructor(props){
     super(props);
     this.getFreeAgents = this.getFreeAgents.bind(this);
+    this.authListener = this.authListener.bind(this);
     this.state = {
-      characters: []
-
+      characters: [],
+      user: {},
+      uid: [],
+      league_id: []
     }
   }
 
 componentDidMount(){
-  this.getFreeAgents();
+  this.authListener();
 };
 
-getFreeAgents(){
-var charRef = db.collection('characters');
-var query = charRef.where('')
+authListener(){
+fire.auth().onAuthStateChanged((user) => {
+  if(user) {
+      this.setState({ user: user });
+      var uid = firebase.auth().currentUser.uid
+      this.setState({uid: uid})
 
+
+      var league_id = db.collection('leagues')
+                      .where("users","array-contains", uid)
+                      .onSnapshot((collection => {
+                        const league_id = collection.docs.map(doc => doc.id)
+                        this.setState({ league_id })
+
+      this.getFreeAgents(this.state.league_id[0]);
+    })
+  )
+  } else {
+    this.setState({ user: null });
+    console.log('not logged in',this.setState.user);
+  }
+});
+}
+
+getFreeAgents(league_id){
+var charRef = db.collection('characters')
+          .where('league_id', '==', league_id)
+          .where('team_id', '==', '')
           .orderBy('score', 'desc')
           .limit(50)
           .onSnapshot(collection => {
@@ -36,7 +64,8 @@ var query = charRef.where('')
 
     return (
       <div className = "char-page">
-      <h1>Character List</h1>
+      <h1>Free Agents</h1>
+      <p>All available Characters</p>
       <div className="button">
         <form action="/free_agents" method="get">
           <input type="submit" value="Free Agents"/>

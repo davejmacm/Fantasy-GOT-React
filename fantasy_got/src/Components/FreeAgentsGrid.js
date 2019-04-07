@@ -1,11 +1,11 @@
 import React from "react";
-import CharactersCards from "./CharactersCards";
+import FreeAgentsCards from "./FreeAgentsCards";
 
-const CharactersGrid = ({characters}) => {
+const FreeAgentsGrid = ({characters}) => {
 
   const charNodes = characters.map((character, index) => {
     return(
-      <CharactersCards key={index} bio={character.bio} name={character.name}  pic_url={character.pic_url} score={character.score}/>
+      <FreeAgentsCards key={index} bio={character.bio} name={character.name}  pic_url={character.pic_url} score={character.score}/>
     );
   });
 
@@ -19,4 +19,4 @@ const CharactersGrid = ({characters}) => {
   )
 
 }
-export default CharactersGrid;
+export default FreeAgentsGrid;
