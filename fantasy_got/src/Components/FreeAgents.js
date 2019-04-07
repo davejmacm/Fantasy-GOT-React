@@ -1,11 +1,11 @@
 import React, {Component}  from "react";
-import CharactersGrid from "./CharactersGrid";
+import FreeAgentsGrid from "./CharactersGrid";
 import fire, {db} from '../config/fire';
 
-class Characters extends Component {
+class FreeAgents extends Component {
   constructor(props){
     super(props);
-    this.getAllCharacters = this.getAllCharacters.bind(this);
+    this.getFreeAgents = this.getFreeAgents.bind(this);
     this.state = {
       characters: []
 
@@ -13,11 +13,13 @@ class Characters extends Component {
   }
 
 componentDidMount(){
-  var characters_data = this.getAllCharacters();
+  this.getFreeAgents();
 };
 
-getAllCharacters(){
-var query = db.collection('characters')
+getFreeAgents(){
+var charRef = db.collection('characters');
+var query = charRef.where('')
+
           .orderBy('score', 'desc')
           .limit(50)
           .onSnapshot(collection => {
@@ -40,13 +42,12 @@ var query = db.collection('characters')
           <input type="submit" value="Free Agents"/>
         </form>
       </div>
-        <CharactersGrid characters={this.state.characters}/>
+        <FreeAgentsGrid characters={this.state.characters}/>
       </div>
     );
   }
 
 }
-export default Characters;
+export default FreeAgents;
 
-// {this.state.characters_data.name}
 // {this.state.characters_data.score}
