@@ -13,36 +13,31 @@ class Characters extends Component {
       user: {},
       uid: [],
       league_id: []
-    }
+    };
   }
 
 componentDidMount(){
-  // this.getAllCharacters();
   this.authListener();
-  console.log("th.st.user:", this.state.uid);
-  console.log("charUser:", firebase.auth().currentUser);
 };
 
 
 authListener(){
 fire.auth().onAuthStateChanged((user) => {
   if(user) {
-    this.setState({ user: user });
-    var uid = firebase.auth().currentUser.uid
-    this.setState({uid: uid})
-    console.log(uid);
-    console.log(this.state.uid);
+      this.setState({ user: user });
+      var uid = firebase.auth().currentUser.uid
+      this.setState({uid: uid})
 
 
-    var league_id = db.collection('leagues').where("users","array-contains", uid).get();
-    // .then(collection => {
-    //   const characters = collection.docs.map(doc => doc.data())
-    //   this.setState({ league_id })
-    //
-    // });
-    console.log("char league_id:", league_id);
-    this.getAllCharacters(league_id);
+      var league_id = db.collection('leagues')
+                      .where("users","array-contains", uid)
+                      .onSnapshot((collection => {
+                        const league_id = collection.docs.map(doc => doc.id)
+                        this.setState({ league_id })
 
+      this.getAllCharacters(this.state.league_id[0]);
+    })
+  )
   } else {
     this.setState({ user: null });
     console.log('not logged in',this.setState.user);
@@ -53,18 +48,14 @@ fire.auth().onAuthStateChanged((user) => {
 
 
 getAllCharacters(league_id){
-    console.log("th.st.user:", this.state.user);
-  // var uid = firebase.auth().currentUser.uid;
-  // var league_id = db.collection('leagues').where("users","array-contains", uid);
-  // console.log("char league_id:", league_id);
-var query = db.collection('characters')
+
+  var query = db.collection('characters')
           .where('league_id', '==', league_id)
           .orderBy('score', 'desc')
           .limit(50)
           .onSnapshot(collection => {
             const characters = collection.docs.map(doc => doc.data())
             this.setState({ characters })
-
           })
           }
 
