@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "../App.css";
 import Navbar from "./Navbar";
+import Home from "./Home";
 import Teams from "./Teams";
 import Characters from "./Characters";
 import Scoring from "./Scoring";
@@ -30,6 +31,7 @@ render(){
         <button className="btn-league">League Change</button>
         <button className="btn-logout" onClick={this.logout}><a href="/">Logout</a></button>
         </div>
+        <Route path="/home" component={Home} />
         <Route path="/teams" component={Teams} />
         <Route path="/characters" component={Characters} />
         <Route path="/scoring" component={Scoring} />
