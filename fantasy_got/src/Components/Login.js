@@ -57,7 +57,7 @@ class Login extends Component {
 
   signup(e){
     e.preventDefault();
-
+console.log("Signup called");
     fire.auth().createUserWithEmailAndPassword(this.state.regEmail, this.state.regPassword)
       .then(() => {
          var user = firebase.auth().currentUser;
@@ -113,16 +113,18 @@ class Login extends Component {
 
       <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="loginEmail" placeholder="Enter Email"/>
 
-      <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="regPassword" placeholder="Password"/>
+      <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="loginPassword" placeholder="Password"/>
 
       <button id="btnLogin" className="btn-Login" type = "submit" onClick={this.login}>Log in</button>
+
+    </div>
+</form>
 
       <button id="btnShowSignup" className="btn-ShowSignup" onClick={this.showSignup}>Want to sign up?</button>
 
 
 
-    </div>
-
+<form>
     <div className="register-fields">
 
       <input value={this.state.regEmail} onChange={this.handleChange} type="email" name="regEmail" id="regEmail" placeholder="Enter Email"/>
@@ -132,7 +134,6 @@ class Login extends Component {
       <input value={this.state.displayName} onChange={this.handleChange} type="displayName" name="displayName" id="fieldDisplayName" placeholder="Display Name"/>
 
       <input value={this.state.leagueId} onChange={this.handleChange} type="leagueId" name="leagueId" id="fieldLeagueId" placeholder="League code"/>
-
 
       <button id="btnSignup" className="btn-Signup" onClick={this.signup}>Sign up</button>
 

@@ -63,6 +63,8 @@ var charRef = db.collection('characters')
   render(){
 
     return (
+      console.log("Freeagents league_id:", this.state.league_id[0]),
+      console.log("Freeagents uid:", this.state.uid),
       <div className = "char-page">
       <h1>Free Agents</h1>
       <p>All available Characters</p>
@@ -71,12 +73,13 @@ var charRef = db.collection('characters')
           <input type="submit" value="Free Agents"/>
         </form>
       </div>
-        <FreeAgentsGrid characters={this.state.characters}/>
+        <FreeAgentsGrid characters={this.state.characters}
+                        uid = {this.state.uid}
+                        league_id = {this.state.league_id}
+        />
       </div>
     );
   }
 
 }
 export default FreeAgents;
-
-// {this.state.characters_data.score}
