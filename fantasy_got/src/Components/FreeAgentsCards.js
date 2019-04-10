@@ -5,6 +5,7 @@ const FreeAgentsCards = (props) => {
 
   console.log("charCard bio:", props.bio);
   console.log("charCard uid:", props.uid);
+  console.log("charCard uid:", props.league_id);
 
 
 
@@ -33,7 +34,7 @@ export default FreeAgentsCards;
 // isFull(name) {
 //
 //   var roster = db.collection('characters')
-//                .where ("team_id", "==", league_id) //var either from props (props.league_id) or from auth authListener
+//                .where ("team_id", "==", props.league_id)
 //   //.then if promise?
 //
 //   if(roster.length >= 6){
@@ -46,12 +47,12 @@ export default FreeAgentsCards;
 //   addToTeam(name){
 //     console.log("Hello!");
 //     var team_id = db.collection('teams')
-//                   .where ("user_id", "==", uid) //var
-//                   .where ("league_id", "==", league_id) // var --- not totally required as settling for one team per user but adds more robustness
+//                   .where ("user_id", "==", props.uid)
+//                   .where ("league_id", "==", props.league_id)
 // //.then if promise?
 //     var char_id = db.collection('characters')
 //                   .where("name", "==", name) // past in props.Name
-//                   .where("league_id", "==", league_id)
+//                   .where("league_id", "==", props.league_id)
 //                   .onSnapshot((collection => {
 //                     const char_id = collection.docs.map(doc => doc.id)
 //                   }))

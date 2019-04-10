@@ -31,7 +31,7 @@ render(){
         <button className="btn-league">League Change</button>
         <button className="btn-logout" onClick={this.logout}><a href="/">Logout</a></button>
         </div>
-        <Route path="/home" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/teams" component={Teams} />
         <Route path="/characters" component={Characters} />
         <Route path="/scoring" component={Scoring} />

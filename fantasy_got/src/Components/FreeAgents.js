@@ -11,8 +11,8 @@ class FreeAgents extends Component {
     this.state = {
       characters: [],
       user: {},
-      uid: [],
-      league_id: []
+      uid: '',
+      league_id: ''
     }
   }
 
@@ -61,21 +61,16 @@ var charRef = db.collection('characters')
 
 
   render(){
-
+    console.log("Freeagents league_id:", this.state.league_id[0]);
+    console.log("Freeagents uid:", this.state.uid);
     return (
-      console.log("Freeagents league_id:", this.state.league_id[0]),
-      console.log("Freeagents uid:", this.state.uid),
+
       <div className = "char-page">
       <h1>Free Agents</h1>
       <p>All available Characters</p>
-      <div className="button">
-        <form action="/free_agents" method="get">
-          <input type="submit" value="Free Agents"/>
-        </form>
-      </div>
         <FreeAgentsGrid characters={this.state.characters}
-                        uid = {this.state.uid}
-                        league_id = {this.state.league_id}
+                        uid={this.state.uid}
+                        league_id={this.state.league_id[0]}
         />
       </div>
     );
