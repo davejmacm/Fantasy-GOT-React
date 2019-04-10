@@ -1,0 +1,63 @@
+/* body{
+  font-family: GameOfThrones, fantasy, sans-serif;
+  color: white;
+  letter-spacing: 0.01em;
+  word-spacing: 0.1em;
+  background-image: url("images/whiteWalker.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  width: 100vw;
+} */
+a:hover {
+  color: #af111c;
+}
+h1 {
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+h4 {
+  text-align: center;
+}
+
+p {
+  font-size: 12px
+}
+
+/* LOGIN SCREEN */
+.login-wall{
+  
+}
+
+.login-container {
+position: fixed;
+ top: 30%;
+ left: 60%;
+ /* bring your own prefixes */
+ transform: translate(-50%, -50%);
+
+}
+
+.login-fields {
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.register-fields {
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.seen{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hidden{
+  display: none;
+}

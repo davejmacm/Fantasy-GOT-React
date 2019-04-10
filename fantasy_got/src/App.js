@@ -35,6 +35,7 @@ componentDidMount(){
   render() {
     return (
       <div className="home-page">
+    
       {this.state.user ? (<Main />) : (<Login/>)}
 
       </div>

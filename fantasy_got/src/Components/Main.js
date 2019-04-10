@@ -9,6 +9,7 @@ import FreeAgents from "./FreeAgents";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import fire from '../config/fire'
 
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +27,7 @@ render(){
   return (
     <Router>
       <React.Fragment>
+      <div className ="background">
         <Navbar />
         <div className="auth-buttons">
         <button className="btn-league">League Change</button>
@@ -36,6 +38,7 @@ render(){
         <Route path="/characters" component={Characters} />
         <Route path="/scoring" component={Scoring} />
         <Route path="/free_agents" component={FreeAgents} />
+      </div>
       </React.Fragment>
     </Router>
   );

@@ -9,6 +9,11 @@ body{
   background-repeat: no-repeat;
   /* height: 100vh; */
 }
+
+.background{
+
+}
+
 a:hover {
   color: #af111c;
 }
@@ -25,37 +30,7 @@ p {
   font-size: 12px
 }
 
-/* LOGIN SCREEN */
 
-.login-container {
-  position: fixed;
- top: 30%;
- left: 50%;
- /* bring your own prefixes */
- transform: translate(-50%, -50%);
-
-}
-
-.login-fields {
-  flex-direction: column;
-  justify-content: center;
-}
-
-.register-fields {
-  flex-direction: column;
-  justify-content: center;
-
-}
-
-.seen{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hidden{
-  display: none;
-}
 
 /* NAV BAR */
 

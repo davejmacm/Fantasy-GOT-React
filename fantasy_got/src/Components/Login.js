@@ -1,6 +1,8 @@
 import React, {Component} from "react";
+import "../login.css";
 import fire, {db} from '../config/fire';
 import * as firebase from 'firebase';
+
 
 
 class Login extends Component {
@@ -105,9 +107,10 @@ console.log("Signup called");
 
   render() {
     return(
-
+<div className="login-wall">
   <div className="login-container">
    <h1 id="log-in-fight"> Log in to join the fight!</h1>
+
 <form>
     <div className="login-fields">
 
@@ -120,8 +123,9 @@ console.log("Signup called");
     </div>
 </form>
 
+<form>
       <button id="btnShowSignup" className="btn-ShowSignup" onClick={this.showSignup}>Want to sign up?</button>
-
+</form>
 
 
 <form>
@@ -140,6 +144,7 @@ console.log("Signup called");
     </div>
 </form>
   </div>
+</div>
    )
   }
 };

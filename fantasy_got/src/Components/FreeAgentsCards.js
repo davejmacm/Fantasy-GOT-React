@@ -1,4 +1,5 @@
 import React from 'react';
+import fire, {db} from '../config/fire';
 
 const FreeAgentsCards = (props) => {
   if (!props) return null;
@@ -17,12 +18,14 @@ const FreeAgentsCards = (props) => {
         <p> Name: <a href="/characters/character.id"> {props.name} </a> </p>
         <p> Score: {props.score} </p>
         <form>
-          <button type="submit" value="Add Character" >Add Character</button>
+          <button type="submit" value="Add Character" onClick={props.handleClick(props.name)}>Add Character</button>
         </form>
       </div>
     </div>
   )
 }
+
+
 
 export default FreeAgentsCards;
 // onClick={this.handleClick(props.name)}
