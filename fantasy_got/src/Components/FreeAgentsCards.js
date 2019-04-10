@@ -1,4 +1,5 @@
 import React from 'react';
+import errorPic from "../images/2rqqg5.jpg";
 import fire, {db} from '../config/fire';
 
 const FreeAgentsCards = (props) => {
@@ -12,13 +13,13 @@ const FreeAgentsCards = (props) => {
 
   return(
     <div className="character-card">
-      <img className="character-pic" src={props.pic_url} onError="this.src='images/2rqqg5.jpg';"/>
+      <img className="character-pic" src={props.pic_url} onError={(e)=>{e.target.onerror = null; e.target.src=errorPic}}/>
 
       <div className="character-details">
         <p> Name: <a href="/characters/character.id"> {props.name} </a> </p>
         <p> Score: {props.score} </p>
         <form>
-          <button type="submit" value="Add Character" onClick={props.handleClick(props.name)}>Add Character</button>
+          <button type="submit" value="Add Character" >Add Character</button>
         </form>
       </div>
     </div>
@@ -28,7 +29,7 @@ const FreeAgentsCards = (props) => {
 
 
 export default FreeAgentsCards;
-// onClick={this.handleClick(props.name)}
+//onClick={props.handleClick(props.name)}
 
 // handleClick(name){
 //   this.isFull(name)
