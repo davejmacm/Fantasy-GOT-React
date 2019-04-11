@@ -8,9 +8,9 @@ class FreeAgents extends Component {
     super(props);
     this.getFreeAgents = this.getFreeAgents.bind(this);
     this.authListener = this.authListener.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
-    // this.isFull = this.isFull.bind(this);
-    // this.addToTeam = this.addToTeam.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.isFull = this.isFull.bind(this);
+    this.addToTeam = this.addToTeam.bind(this);
     this.state = {
       characters: [],
       user: {},
@@ -63,58 +63,65 @@ var charRef = db.collection('characters')
         };
 
 
-// handleClick(name){
-//     this.isFull(name);
-//       };
-//
-//
-// isFull(name) {
-//
-//   var team_id = db.collection('teams')
-//                 .where ("user_id", "==", "ZZXOcgXGnOQXfrlfUe6LcE8iYvl2") //this.state.uid
-//                 // .where ("league_id", "==", this.state.league_id[0])
-//                 .onSnapshot(collection => {
-//                   const team_id = collection.docs.map(doc => doc.id)
-//                   this.setState({ team_id })
-//                 })
-//
-// console.log("team_id is full:", this.state.team_id[0]);
-//   var roster = db.collection('characters')
-//               .where ("team_id", "==", "l4Kn6swpuFOK6sF8hKpi")//this.state.team_id
-//               .onSnapshot(collection => {
-//                 const roster = collection.docs.map(doc => doc.data())
-//                 this.setState({ roster })
-//               })
-//               //.then if promise?
-// console.log("Roster var:", this.state.roster)
-//
-//             if(this.state.roster.length >= 6){
-//                 window.location.assign("/team_full") // redirect to dropping character page --- not sure if this will work example had complete url path
-//               } else {
-//                 this.addToTeam(name)
-//               }
-//             };
-//
-//
-// addToTeam(name) {
-// console.log("Hello!", this.state.team_id);
-//   // var team_id = this.state.team_id
-//             //.then if promise?
-//   var char_id = db.collection('characters')
-//                 .where("name", "==", name) // past in props.Name
-//                 .where("league_id", "==", this.state.league_id[0])
-//                 .onSnapshot(collection => {
-//                  const char_id = collection.docs.map(doc => doc.id)
-//                  this.setState({ char_id })
-//                })
-//                console.log("char_id:", this.state.char_id);
-//                console.log("league_id:", this.state.league_id);
-//             //.then if promise?
-//     db.collection('characters').doc(this.state.char_id).update(
-//             {team_id: this.state.team_id}
-//     )
-//
-//   };
+handleClick(name){
+  console.log("WHY AM I BEING CALLED??!?!?");
+    this.isFull(name);
+      };
+
+
+isFull(name) {
+
+  var team_id = db.collection('teams')
+                .where ("user_id", "==", "ZZXOcgXGnOQXfrlfUe6LcE8iYvl2") //this.state.uid
+                // .where ("league_id", "==", this.state.league_id[0])
+                .get()
+                .then((doc) => {
+                  const team_id = doc.id;
+                  console.log("*****DOC_ID****",doc.id);
+                   this.setState({ team_id })
+                   console.log("team_id is full:", this.state.team_id);
+                }).then(() => {
+                      var roster = db.collection('characters')
+                                  .where ("team_id", "==", "l4Kn6swpuFOK6sF8hKpi")//this.state.team_id
+                                  .get()
+                                  .then((team) => {
+                                    team.forEach((doc) => {
+                                      this.setState({ roster })
+                                    }
+                                    )
+                                })
+                   }).then(() => {
+                        console.log("Roster var:", this.state.roster)
+
+                        if(this.state.roster.length >= 6){
+                          window.location.assign("/team_full") // redirect to dropping character page --- not sure if this will work example had complete url path
+                        } else {
+                          this.addToTeam(name)
+                          }
+                      })
+                   };
+
+
+
+addToTeam(name) {
+console.log("Hello!", this.state.team_id);
+  // var team_id = this.state.team_id
+            //.then if promise?
+  var char_id = db.collection('characters')
+                .where("name", "==", name) // past in props.Name
+                .where("league_id", "==", this.state.league_id[0])
+                .get(collection => {
+                 const char_id = collection.docs.map(doc => doc.id)
+                 this.setState({ char_id })
+               })
+               console.log("char_id:", this.state.char_id);
+               console.log("league_id:", this.state.league_id);
+            //.then if promise?
+    db.collection('characters').doc(this.state.char_id).update(
+            {team_id: this.state.team_id}
+    )
+
+  };
 
 
 
