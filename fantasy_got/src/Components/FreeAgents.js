@@ -136,7 +136,7 @@ console.log("Hello!", this.state.team_id);
         <FreeAgentsGrid characters={this.state.characters}
                         uid={this.state.uid}
                         league_id={this.state.league_id[0]}
-                        handleClick={this.handleClick}
+                        handleClick={() => this.handleClick}
         />
       </div>
     );

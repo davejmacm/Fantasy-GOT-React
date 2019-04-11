@@ -19,7 +19,7 @@ const FreeAgentsCards = (props) => {
         <p> Name: <a href="/characters/character.id"> {props.name} </a> </p>
         <p> Score: {props.score} </p>
         <form>
-          <button type="submit" value="Add Character" >Add Character</button>
+          <button type="submit" value="Add Character" onClick={props.handleClick(props.name)}>Add Character</button>
         </form>
       </div>
     </div>
