@@ -1,5 +1,6 @@
 import React, {Component}  from "react";
 import Teams from "./Teams";
+import '../App.css';
 
 class Home extends Component {
   constructor(props){

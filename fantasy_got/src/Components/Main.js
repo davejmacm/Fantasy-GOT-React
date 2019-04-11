@@ -19,6 +19,10 @@ class Main extends Component {
     }
   };
 
+  componentDidMount(){
+    document.body.classList.remove("login-body")
+  }
+
 logout(){
   fire.auth().signOut();
 }
@@ -30,7 +34,7 @@ render(){
       <div className ="background">
         <Navbar />
         <div className="auth-buttons">
-        <button className="btn-league">League Change</button>
+        <button className="btn-league glass">League Change</button>
         <button className="btn-logout" onClick={this.logout}><a href="/">Logout</a></button>
         </div>
         <Route exact path="/" component={Home} />

@@ -1,14 +1,14 @@
-/* body{
-  font-family: GameOfThrones, fantasy, sans-serif;
+.login-body{
+  /* font-family: GameOfThrones, fantasy, sans-serif;
   color: white;
   letter-spacing: 0.01em;
-  word-spacing: 0.1em;
-  background-image: url("images/whiteWalker.jpg");
+  word-spacing: 0.1em; */
+  background-image: url("../images/whiteWalker.jpg");
   background-size: cover;
   background-position: top;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   width: 100vw;
-} */
+}
 a:hover {
   color: #af111c;
 }
@@ -28,7 +28,9 @@ p {
 
 /* LOGIN SCREEN */
 .login-wall{
-  
+  background-image: url("../images/whiteWalker.jpg") !important;
+  background-size: cover;
+  background-position: top;
 }
 
 .login-container {

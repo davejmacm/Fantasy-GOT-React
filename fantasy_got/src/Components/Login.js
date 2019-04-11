@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "../login.css";
+import "./login.css";
 import fire, {db} from '../config/fire';
 import * as firebase from 'firebase';
 
@@ -29,6 +29,8 @@ class Login extends Component {
     var register = document.querySelector(".register-fields").style.display='flex'; // change to none
 
     var login = document.querySelector(".login-fields").style.display='flex';
+
+    document.body.className="login-body"
 
   }
 
@@ -118,13 +120,13 @@ console.log("Signup called");
 
       <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="loginPassword" placeholder="Password"/>
 
-      <button id="btnLogin" className="btn-Login" type = "submit" onClick={this.login}>Log in</button>
+      <button id="btnLogin" className="btn-Login glass" type = "submit" onClick={this.login}>Log in</button>
 
     </div>
 </form>
 
 <form>
-      <button id="btnShowSignup" className="btn-ShowSignup" onClick={this.showSignup}>Want to sign up?</button>
+      <button id="btnShowSignup" className="btn-ShowSignup glass-sculp" onClick={this.showSignup}>Want to sign up?</button>
 </form>
 
 
@@ -139,7 +141,7 @@ console.log("Signup called");
 
       <input value={this.state.leagueId} onChange={this.handleChange} type="leagueId" name="leagueId" id="fieldLeagueId" placeholder="League code"/>
 
-      <button id="btnSignup" className="btn-Signup" onClick={this.signup}>Sign up</button>
+      <button id="btnSignup" className="btn-Signup glass" onClick={this.signup}>Sign up</button>
 
     </div>
 </form>
