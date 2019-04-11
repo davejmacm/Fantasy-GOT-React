@@ -126,7 +126,7 @@ console.log("Signup called");
 </form>
 
 <form>
-      <button id="btnShowSignup" className="btn-ShowSignup glass-sculp" onClick={this.showSignup}>Want to sign up?</button>
+      <button id="btnShowSignup" className="btn-ShowSignup bob" onClick={this.showSignup}>Want to sign up?</button>
 </form>
 
 
