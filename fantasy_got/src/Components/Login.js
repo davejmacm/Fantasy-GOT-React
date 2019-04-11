@@ -137,9 +137,9 @@ console.log("Signup called");
 
       <input value={this.state.regPassword} onChange={this.handleChange} type="password" name="regPassword" id="regPassword" placeholder="Password"/>
 
-      <input value={this.state.displayName} onChange={this.handleChange} type="displayName" name="displayName" id="fieldDisplayName" placeholder="Display Name"/>
+      <input value={this.state.displayName} onChange={this.handleChange} type="text" name="displayName" id="fieldDisplayName" placeholder="Display Name"/>
 
-      <input value={this.state.leagueId} onChange={this.handleChange} type="leagueId" name="leagueId" id="fieldLeagueId" placeholder="League code"/>
+      <input value={this.state.leagueId} onChange={this.handleChange} type="text" name="leagueId" id="fieldLeagueId" placeholder="League code"/>
 
       <button id="btnSignup" className="btn-Signup glass" onClick={this.signup}>Sign up</button>
 

@@ -35,7 +35,7 @@ render(){
         <Navbar />
         <div className="auth-buttons">
         <button className="btn-league glass">League Change</button>
-        <button className="btn-logout" onClick={this.logout}><a href="/">Logout</a></button>
+        <button className="btn-logout glass" onClick={this.logout}><a href="/">Logout</a></button>
         </div>
         <Route exact path="/" component={Home} />
         <Route path="/teams" component={Teams} />

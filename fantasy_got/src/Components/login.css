@@ -35,8 +35,8 @@ p {
 
 .login-container {
 position: fixed;
- top: 30%;
- left: 60%;
+ top: 48%;
+ left: 58%;
  /* bring your own prefixes */
  transform: translate(-50%, -50%);
 
