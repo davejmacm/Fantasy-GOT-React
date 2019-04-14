@@ -21,11 +21,15 @@ const Scoring = () => (
   <p><strong>+10 pts</strong> Brutal One-liner</p>
   <p><strong>+15 pts</strong> Uses Magic (includes visions)</p>
 
-
   <h3>Status/Power:</h3>
   <p><strong>+50 pts</strong> Acquires Valyrian Steel </p>
   <p><strong>+50 pts</strong> Returns from the Dead </p>
   <p><strong>+200 pts</strong> Claims the Iron Throne</p>
+
+  <h3>Nudity/Sex:</h3>
+  <p><strong>+10 pts</strong> Topless</p>
+  <p><strong>+15 pts</strong> Naked (Full Kit)</p>
+  <p><strong>+25 pts</strong> Having Sex</p>
 
 </span></div>
 </div>

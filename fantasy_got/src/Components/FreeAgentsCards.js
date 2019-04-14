@@ -5,7 +5,7 @@ import fire, {db} from '../config/fire';
 const FreeAgentsCards = (props) => {
   if (!props) return null;
 
-  console.log("charCard bio:", props.bio);
+  console.log("charCard handleClick:", props.handleClick);
   console.log("charCard uid:", props.uid);
   console.log("charCard uid:", props.league_id);
 
